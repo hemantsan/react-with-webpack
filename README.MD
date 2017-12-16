@@ -7,7 +7,7 @@ Follow all below steps and check in this repo where you are. Try to type every m
 2. Initialize npm : npm init
 3. Fill up required info for package.json
 4. Install reactjs with production dependancies : npm install react react-dom --save
-5. Install webpack dependancies : npm install webpack webpack-dev-server babel-loader babel-preset-env babel-preset-react babel-preset-stage-2 --save-dev
+5. Install webpack dependancies : npm install webpack webpack-dev-server babel-core babel-loader babel-preset-env babel-preset-react babel-preset-stage-2 --save-dev
 6. Create below folder structure : 
    - src > app
    - src > index.html
