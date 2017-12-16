@@ -5,15 +5,19 @@ class HomeComponent extends Component {
     constructor(props) {
         super();
         this.state = {
-            age: props.initialAge
+            age: props.initialAge,
+            initialName: "Vic"
         };
-        // this.onSetAge = this.onSetAge.bind(this);
     }
     
     onSetAge() {
         this.setState({
             age: this.state.age + 3,
         });
+    }
+
+    onChangeHandler(event) {
+        this.props.linkChanger(event.target.value);
     }
 
     render() {
@@ -23,7 +27,15 @@ class HomeComponent extends Component {
                 <p>Name : {this.props.name}</p>
                 <p>Age : {this.state.age}</p>
                 <p>Hobbies : {this.props.user.hobbies.map( (hob) => {return hob + ', '; }) }</p>
+                <hr/>
                 <button className="btn-primary btn" onClick={() => this.onSetAge()}>Set Age</button>
+                <br/>
+                <br/>
+                <label>Enter page name: </label>
+                <input type="text"
+                        className="form-control w-25"
+                        defaultValue={this.props.initialLinkName}
+                        onChange={(event) => this.onChangeHandler(event)}/>
             </div>
         );
     }

@@ -5,6 +5,19 @@ import HomeComponent from "./components/HomeComponent";
 
 class App extends Component {
 
+    constructor() {
+        super();
+        this.state = {
+            homeLink: 'Home Page',
+        };
+    }
+
+    onLinkChange(newName) {
+        this.setState({
+            homeLink: newName,
+        });
+    }
+
     render() {
         var user = {
             name: "Luna",
@@ -13,10 +26,14 @@ class App extends Component {
 
         return ( 
             <div className="container">
-                <HeaderComponent/>
+                <HeaderComponent homeLink={this.state.homeLink}/>
                 <div className="row">     
                     <div className="col-md-12">           
-                        <HomeComponent name={"Vic"} initialAge={25} user={user}/>
+                        <HomeComponent name={"Vic"}
+                            initialAge={25}
+                            user={user}
+                            initialLinkName={this.state.homeLink}
+                            linkChanger={this.onLinkChange.bind(this)}/>
                     </div>
                 </div>
             </div>
