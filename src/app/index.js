@@ -1,1 +1,14 @@
-console.info('It Works Yeah !!');
+import React, { Component } from "react";
+import { render } from "react-dom";
+
+class App extends Component {
+    render() {
+        return ( 
+            <div className="container">
+                <h1> Hello There </h1>
+            </div>
+        );
+    }
+}
+
+render( <App/>, document.getElementById("app") );
