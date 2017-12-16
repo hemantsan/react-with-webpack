@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
+import HeaderComponent from "./components/HeaderComponent";
+import HomeComponent from "./components/HomeComponent";
 
 class App extends Component {
     render() {
         return ( 
             <div className="container">
-                <h1> Hello There </h1>
+                <div className="row">
+                    <HeaderComponent/>
+                </div>
+                <div className="row">                
+                    <HomeComponent/>
+                </div>
             </div>
         );
     }
