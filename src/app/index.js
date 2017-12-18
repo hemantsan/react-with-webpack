@@ -1,42 +1,20 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
+import { BrowserRouter as Router, Switch, Route, Link, browserHistory } from 'react-router-dom';
+import MainComponent from "./components/MainComponent";
+import DetailComponent from "./components/DetailComponent";
 import HeaderComponent from "./components/HeaderComponent";
-import HomeComponent from "./components/HomeComponent";
 
 class App extends Component {
-
-    constructor() {
-        super();
-        this.state = {
-            homeLink: 'Home Page',
-        };
-    }
-
-    onLinkChange(newName) {
-        this.setState({
-            homeLink: newName,
-        });
-    }
-
     render() {
-        var user = {
-            name: "Luna",
-            hobbies: ["Sports", "Horse Riding"]
-        }
-
         return ( 
-            <div className="container">
-                <HeaderComponent homeLink={this.state.homeLink}/>
-                <div className="row">     
-                    <div className="col-md-12">           
-                        <HomeComponent name={"Vic"}
-                            initialAge={25}
-                            user={user}
-                            initialLinkName={this.state.homeLink}
-                            linkChanger={this.onLinkChange.bind(this)}/>
-                    </div>
-                </div>
-            </div>
+            <Router>
+                <Switch history={browserHistory}>
+                    <Route exact path={"/"} component={HeaderComponent} />                
+                    <Route exact path={"/detail"} component={DetailComponent} />
+                    <Route exact path={"/home"} component={MainComponent} />
+                </Switch>
+            </Router>
         );
     }
 }

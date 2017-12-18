@@ -63,3 +63,10 @@ MORE INFORMATION:
 - --save : Install PROD dependancies and deploy on PROD
 - webpack -d : means run this webpack in DEV server.
 - webpack -p : means run this webpack part in PROD server.
+- --history-api-fallback : It is needed in order to return index.html from server instead of 404 error. And preventing the use of '#' in browser url.
+
+--------------------------------------
+
+Install Dependencies : 
+
+- React Router DOM : npm install --save react-router-dom
